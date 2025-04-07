@@ -3,13 +3,13 @@ provider "aws" {
   region = var.aws_region
 }
 
-terraform {
-  backend "s3" {
-    bucket = "terraform-state-files-storage-tffile"
-    key    = "base-infra.tfstate"
-    region = "us-east-1"
+  terraform {
+    backend "s3" {
+      bucket = "terraform-state-files-storage-tffile"
+      key    = "base-infra.tfstate"
+      region = "us-east-1"
+    }
   }
-}
 
 resource "aws_vpc" "default" {
   cidr_block           = var.vpc_cidr
